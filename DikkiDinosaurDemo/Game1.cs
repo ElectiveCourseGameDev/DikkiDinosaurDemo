@@ -25,6 +25,8 @@ namespace DikkiDinosaurDemo
 
         private Sprite _cloud;
 
+        private Cloud _cloud2;
+
         public Game1()
             : base()
         {
@@ -58,6 +60,8 @@ namespace DikkiDinosaurDemo
             _cloud = new Sprite(cloudTexture, new Vector2(50, 10));
             _cloud.Scale = 1.2f;
 
+            _cloud2 = new Cloud(cloudTexture, new Vector2(600,30));
+
             dikkiDinosaurTexture2D = Content.Load<Texture2D>("dikkiDinosaur.png");
             // TODO: use this.Content to load your game content here
         }
@@ -78,6 +82,8 @@ namespace DikkiDinosaurDemo
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            _cloud2.Update(gameTime);
+
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
@@ -100,6 +106,7 @@ namespace DikkiDinosaurDemo
             // TODO: Add your drawing code here
             spriteBatch.Begin();
             _cloud.Draw(gameTime, spriteBatch);
+            _cloud2.Draw(gameTime, spriteBatch);
             spriteBatch.Draw(dikkiDinosaurTexture2D, dikkiDinosaurPosition, Color.White);
             spriteBatch.End();
             base.Draw(gameTime);
