@@ -1,6 +1,7 @@
 ﻿#region Using Statements
 using System;
 using System.Collections.Generic;
+using DikkiDinosaur;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -21,6 +22,8 @@ namespace DikkiDinosaurDemo
 
         private Texture2D dikkiDinosaurTexture2D;
         private Vector2 dikkiDinosaurPosition = new Vector2(200, 80);
+
+        private Sprite _cloud;
 
         public Game1()
             : base()
@@ -50,6 +53,10 @@ namespace DikkiDinosaurDemo
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            Texture2D cloudTexture = Content.Load<Texture2D>("cloud.png");
+            _cloud = new Sprite(cloudTexture, new Vector2(50, 10));
+            _cloud.Scale = 1.2f;
 
             dikkiDinosaurTexture2D = Content.Load<Texture2D>("dikkiDinosaur.png");
             // TODO: use this.Content to load your game content here
@@ -92,6 +99,7 @@ namespace DikkiDinosaurDemo
 
             // TODO: Add your drawing code here
             spriteBatch.Begin();
+            _cloud.Draw(gameTime, spriteBatch);
             spriteBatch.Draw(dikkiDinosaurTexture2D, dikkiDinosaurPosition, Color.White);
             spriteBatch.End();
             base.Draw(gameTime);
