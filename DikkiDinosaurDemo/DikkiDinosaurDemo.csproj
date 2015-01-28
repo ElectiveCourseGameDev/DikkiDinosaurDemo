@@ -36,10 +36,17 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Cloud.cs" />
+    <Compile Include="Dinosaur.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="Framework\IInputGamePadButtons.cs" />
+    <Compile Include="Framework\IInputGamePadDigitalDpad.cs" />
+    <Compile Include="Framework\IInputGamePadDigitalTriggers.cs" />
+    <Compile Include="Framework\IInputGamePadLeftStick.cs" />
+    <Compile Include="Framework\IInputGamePadRightStick.cs" />
+    <Compile Include="Framework\InputController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sprite.cs" />
+    <Compile Include="Framework\Sprite.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">

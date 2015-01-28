@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace DikkiDinosaur
 {
-    internal class Sprite
+    public class Sprite
     {
         public Sprite(Texture2D spriteTexture, Vector2 position)
         {

@@ -27,6 +27,10 @@ namespace DikkiDinosaurDemo
 
         private Cloud _cloud2;
 
+        Dinosaur dikki;
+
+        private InputController inputController;
+
         public Game1()
             : base()
         {
@@ -53,6 +57,9 @@ namespace DikkiDinosaurDemo
         /// </summary>
         protected override void LoadContent()
         {
+            inputController = new InputController(PlayerIndex.One);
+
+
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
@@ -62,7 +69,11 @@ namespace DikkiDinosaurDemo
 
             _cloud2 = new Cloud(cloudTexture, new Vector2(600,30));
 
-            dikkiDinosaurTexture2D = Content.Load<Texture2D>("dikkiDinosaur.png");
+            dikkiDinosaurTexture2D = Content.Load<Texture2D>("dikkiDinosaur.png");  
+            
+            dikki = new Dinosaur(dikkiDinosaurTexture2D,new Vector2(100,100));
+            inputController.InputGamePadLeftStickListeners.Add(dikki);
+
             // TODO: use this.Content to load your game content here
         }
 
@@ -87,8 +98,8 @@ namespace DikkiDinosaurDemo
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            if (Keyboard.GetState().IsKeyDown(Keys.Left)) dikkiDinosaurPosition.X--;
-            if (Keyboard.GetState().IsKeyDown(Keys.Right)) dikkiDinosaurPosition.X++;
+            inputController.Update(gameTime);
+            
 
             // TODO: Add your update logic here
 
@@ -107,8 +118,11 @@ namespace DikkiDinosaurDemo
             spriteBatch.Begin();
             _cloud.Draw(gameTime, spriteBatch);
             _cloud2.Draw(gameTime, spriteBatch);
-            spriteBatch.Draw(dikkiDinosaurTexture2D, dikkiDinosaurPosition, Color.White);
+            dikki.Draw(gameTime, spriteBatch);
+            
             spriteBatch.End();
+            
+
             base.Draw(gameTime);
         }
     }
