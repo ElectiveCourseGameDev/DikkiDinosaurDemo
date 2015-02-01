@@ -37,6 +37,8 @@
   <ItemGroup>
     <Compile Include="Cloud.cs" />
     <Compile Include="Dinosaur.cs" />
+    <Compile Include="Framework\ColissionHandler.cs" />
+    <Compile Include="Framework\ICollidable.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Framework\IInputGamePadButtons.cs" />
     <Compile Include="Framework\IInputGamePadDigitalDpad.cs" />
