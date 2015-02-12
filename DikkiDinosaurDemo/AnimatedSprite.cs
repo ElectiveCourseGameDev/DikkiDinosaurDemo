@@ -12,6 +12,7 @@ namespace DikkiDinosaurDemo
     class AnimatedSprite : Sprite, IInputGamePadLeftStick, IInputGamePadButtons
     {
         Animation animation;
+        private State _state;
         public enum State
         {
             Waiting,
@@ -24,23 +25,30 @@ namespace DikkiDinosaurDemo
             // set sourcerectangle
             SourceRectangle = new Rectangle(0, 114, 72, 78);
 
-            //instansiate animation and set frames
-            animation = new Animation(this);
-            animation.Frames.Add(new Rectangle(0,96,72,96));
-            animation.Frames.Add(new Rectangle(72,96,72,96));
-            animation.Frames.Add(new Rectangle(144,96,72,96));
-
-            
         }
 
         public void LeftStickMove(Vector2 moveVector)
         {
             Position += moveVector;
+
+            if (_state != State.walking)
+            {
+                //instansiate animation and set frames
+                animation = new Animation(this);
+                animation.Frames.Add(new Rectangle(0, 96, 72, 96));
+                animation.Frames.Add(new Rectangle(72, 96, 72, 96));
+                animation.Frames.Add(new Rectangle(144, 96, 72, 96));
+                _state = State.walking;
+            }
         }
 
         public override void Update(GameTime gameTime)
         {
-            animation.Update(gameTime);
+            if (animation != null)
+            {
+                animation.Update(gameTime);    
+            }
+            
            
         }
 
@@ -126,6 +134,7 @@ namespace DikkiDinosaurDemo
             animation.Frames.Add(new Rectangle(288, 96, 72, 96));
             animation.Frames.Add(new Rectangle(360, 96, 72, 96));
             animation.Frames.Add(new Rectangle(432, 96, 72, 96));
+            _state = State.Jumping;
 
         }
 
