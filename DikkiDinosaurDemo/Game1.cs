@@ -31,6 +31,8 @@ namespace DikkiDinosaurDemo
 
         private InputController inputController;
 
+        private AnimatedSprite animatedSprite;
+
         public Game1()
             : base()
         {
@@ -72,8 +74,12 @@ namespace DikkiDinosaurDemo
             dikkiDinosaurTexture2D = Content.Load<Texture2D>("dikkiDinosaur.png");  
             
             dikki = new Dinosaur(dikkiDinosaurTexture2D,new Vector2(100,100));
-            inputController.InputGamePadLeftStickListeners.Add(dikki);
+            //inputController.InputGamePadLeftStickListeners.Add(dikki);
 
+            Texture2D animationTexture = Content.Load<Texture2D>("p3_spritesheet.png");
+            animatedSprite = new AnimatedSprite(animationTexture, new Vector2(100,100));
+            inputController.InputGamePadLeftStickListeners.Add(animatedSprite);
+            inputController.InputGamePadButtonListeners.Add(animatedSprite);
             // TODO: use this.Content to load your game content here
         }
 
@@ -100,6 +106,7 @@ namespace DikkiDinosaurDemo
 
             inputController.Update(gameTime);
             
+            animatedSprite.Update(gameTime);
 
             // TODO: Add your update logic here
 
@@ -119,7 +126,8 @@ namespace DikkiDinosaurDemo
             _cloud.Draw(gameTime, spriteBatch);
             _cloud2.Draw(gameTime, spriteBatch);
             dikki.Draw(gameTime, spriteBatch);
-            
+            animatedSprite.Draw(gameTime, spriteBatch);
+
             spriteBatch.End();
             
 
