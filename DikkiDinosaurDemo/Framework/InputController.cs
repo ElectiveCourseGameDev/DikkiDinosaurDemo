@@ -153,9 +153,9 @@ namespace DikkiDinosaur
                 ButtonBDown(ButtonStates.JustPressed);
                 _buttonBDown = true;
             }
-            else _buttonADown = false;
+            else _buttonBDown = false;
 
-            if (_gamePadState.IsButtonDown(Buttons.X) && _buttonADown) ButtonXDown(ButtonStates.StillPressed);
+            if (_gamePadState.IsButtonDown(Buttons.X) && _buttonXDown) ButtonXDown(ButtonStates.StillPressed);
             else if (_gamePadState.IsButtonDown(Buttons.X))
             {
                 ButtonXDown(ButtonStates.JustPressed);
@@ -169,7 +169,7 @@ namespace DikkiDinosaur
                 ButtonYDown(ButtonStates.JustPressed);
                 _buttonYDown = true;
             }
-            else _buttonADown = false;
+            else _buttonYDown = false;
 
             if (_gamePadState.IsButtonDown(Buttons.LeftShoulder) && _buttonLeftShoulderDown) ButtonShoulderLeftDown(ButtonStates.StillPressed);
             else if (_gamePadState.IsButtonDown(Buttons.LeftShoulder))
@@ -177,7 +177,7 @@ namespace DikkiDinosaur
                 ButtonShoulderLeftDown(ButtonStates.JustPressed);
                 _buttonLeftShoulderDown = true;
             }
-            else _buttonADown = false;
+            else _buttonLeftShoulderDown = false;
 
             if (_gamePadState.IsButtonDown(Buttons.RightShoulder) && _buttonRightShoulderDown) ButtonShoulderRightDown(ButtonStates.StillPressed);
             else if (_gamePadState.IsButtonDown(Buttons.RightShoulder))

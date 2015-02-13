@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DikkiDinosaur.InputController">
+    <Position X="0.75" Y="0.5" Width="3.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="DikkiDinosaur.InputController.ButtonStates" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Framework\InputController.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="DikkiDinosaur.InputController.Controller" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Framework\InputController.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>CQTAADDISAgAALIKQCALFEEAJAgiAAhCMS0YAQAkIgk=</HashCode>
+      <FileName>Framework\InputController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="DikkiDinosaurDemo.Framework.IInputGamePadButtons">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAACAAAAAAAAIAAAACBUAABAgCAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\IInputGamePadButtons.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="DikkiDinosaurDemo.Framework.IInputGamePadDigitalDpad" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACgAAAAAAIAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Framework\IInputGamePadDigitalDpad.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="DikkiDinosaurDemo.Framework.IInputGamePadAnalogTriggers">
+    <Position X="6" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Framework\IInputGamePadDigitalTriggers.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="DikkiDinosaurDemo.Framework.IInputGamePadLeftStick">
+    <Position X="7.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\IInputGamePadLeftStick.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="DikkiDinosaurDemo.Framework.IInputGamePadRightStick">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\IInputGamePadRightStick.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
