@@ -187,15 +187,15 @@ namespace DikkiDinosaur
             }
             else _buttonRightShoulderDown = false;
 
-            if (_gamePadState.IsButtonDown(Buttons.Start) && _buttonRightShoulderDown) ButtonStartDown(ButtonStates.StillPressed);
+            if (_gamePadState.IsButtonDown(Buttons.Start) && _buttonBackDown) ButtonStartDown(ButtonStates.StillPressed);
             else if (_gamePadState.IsButtonDown(Buttons.Start))
             {
                 ButtonStartDown(ButtonStates.JustPressed);
                 _buttonStartDown = true;
             }
-            else _buttonRightShoulderDown = false;
+            else _buttonStartDown = false;
 
-            if (_gamePadState.IsButtonDown(Buttons.Back) && _buttonRightShoulderDown) ButtonBackDown(ButtonStates.StillPressed);
+            if (_gamePadState.IsButtonDown(Buttons.Back) && _buttonBackDown) ButtonBackDown(ButtonStates.StillPressed);
             else if (_gamePadState.IsButtonDown(Buttons.Back))
             {
                 ButtonBackDown(ButtonStates.JustPressed);
@@ -203,7 +203,7 @@ namespace DikkiDinosaur
             }
             else _buttonBackDown = false;
 
-            if (_gamePadState.IsButtonDown(Buttons.LeftStick) && _buttonRightShoulderDown) ButtonLeftStickDown(ButtonStates.StillPressed);
+            if (_gamePadState.IsButtonDown(Buttons.LeftStick) && _buttonLeftStickDown) ButtonLeftStickDown(ButtonStates.StillPressed);
             else if (_gamePadState.IsButtonDown(Buttons.LeftStick))
             {
                 ButtonLeftStickDown(ButtonStates.JustPressed);
@@ -211,7 +211,7 @@ namespace DikkiDinosaur
             }
             else _buttonBackDown = false;
 
-            if (_gamePadState.IsButtonDown(Buttons.RightStick) && _buttonRightShoulderDown) ButtonRightStickDown(ButtonStates.StillPressed);
+            if (_gamePadState.IsButtonDown(Buttons.RightStick) && _buttonRightStickDown) ButtonRightStickDown(ButtonStates.StillPressed);
             else if (_gamePadState.IsButtonDown(Buttons.RightStick))
             {
                 ButtonRightStickDown(ButtonStates.JustPressed);
@@ -253,7 +253,7 @@ namespace DikkiDinosaur
         {
             foreach (var inputGamePadButtonListener in InputGamePadButtonListeners)
             {
-                inputGamePadButtonListener.ButtonRightStickDown(buttonStates);
+                inputGamePadButtonListener.ButtonRightShoulderDown(buttonStates);
             }
         }
 
